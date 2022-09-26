@@ -1,9 +1,9 @@
+# env
+.env*
+
 # compiled output
 /dist
 /node_modules
-
-# Sqlite Data
-db.sqlite
 
 # Logs
 logs
