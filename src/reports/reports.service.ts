@@ -17,7 +17,7 @@ export class ReportsService {
   }
 
   async findOne(id: number) {
-    const report = await this.repo.findOneBy({ id });
+    const report = await this.repo.findOne({ id });
     if (!id || !report) {
       throw new NotFoundException('report not found');
     }

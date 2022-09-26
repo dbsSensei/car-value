@@ -20,8 +20,12 @@ export class CurrentUserMiddleware implements NestMiddleware {
     const { userId } = req.session || {};
 
     if (userId) {
-      const user = await this.usersService.findOne(userId);
-      req.currentUser = user;
+      try {
+        const user = await this.usersService.findOne(userId);
+        req.currentUser = user;
+      } catch (e) {
+        console.log('user who belong this cookie has been deleted');
+      }
     }
 
     next();
