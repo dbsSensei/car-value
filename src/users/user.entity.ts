@@ -7,7 +7,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Report } from '../reports/report.entity';
+import { Thread } from '../threads/thread.entity';
 
 @Entity()
 export class User {
@@ -23,8 +23,8 @@ export class User {
   @Column({ default: false })
   admin: boolean;
 
-  @OneToMany(() => Report, (report) => report.user)
-  reports: Report[];
+  @OneToMany(() => Thread, (thread) => thread.user)
+  threads: Thread[];
 
   // @AfterInsert()
   // logInsert() {

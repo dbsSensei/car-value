@@ -1,5 +1,5 @@
 const dbConfig = {
-  synchronize: false,
+  synchronize: true,
   migrations: ['migrations/*.js'],
   cli: {
     migrationsDir: 'migrations',
@@ -12,7 +12,7 @@ switch (process.env.NODE_ENV) {
       type: 'sqlite',
       database: 'db.sqlite',
       entities: ['**/*.entity.js'],
-      migrationsRun: true,
+      migrationsRun: false,
     });
     break;
   case 'test':
